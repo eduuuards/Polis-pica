@@ -6,7 +6,16 @@ public class picerija {
 	double cena;
 	static double rekins=0;
 	static int picasIzm;
+	static String picasNos;
+	static String picasNos2;
 	static int skaits=0;
+	
+	public static void apturet() {
+		JOptionPane.showMessageDialog(null, "Pasutijums atcelts", null, JOptionPane.WARNING_MESSAGE);
+	}
+	public static void kluda() {
+		JOptionPane.showMessageDialog(null, "Darbiba nepastav");
+	}
 	
 	public static double pasutitPicu1(double rekins) {
 		
@@ -27,11 +36,35 @@ public class picerija {
 			JOptionPane.showMessageDialog(null, "Lielums neatbilst", null, JOptionPane.ERROR_MESSAGE);
 		}
 		}while(picasIzm !=20 && picasIzm !=30 && picasIzm !=50);
+			picasNos = JOptionPane.showInputDialog(null, "Kadu picu vçlies pasûtit? \n[1]Studentu \n[2]Asa \n[3]Salami \n[4]Siera \n[x]Atcelt");
 		
+		switch(picasNos) {
+		case "1":
+			picasNos2 = "Studentu";
+			break;
+		case "2":
+			picasNos2 = "Asa";
+			break;
+		case "3":
+			picasNos2 = "Salami";
+			break;
+		case "4":
+			picasNos2 = "Siera";
+			break;
+		case "x":
+			apturet();
+			break;
+		default:
+			kluda();
+		}
+			
 		
 		return rekins;
 	}
 	
+	public static void apskatitPasutijumu() {
+		JOptionPane.showMessageDialog(null, "Pica "+picasNos2);
+	}
 	
 	public static void main(String[] args) {
 		String izvele;
@@ -46,16 +79,16 @@ public class picerija {
 			pasutitPicu1(rekins);
 			break;
 		case "2":
-			//apskatitPasutijumu();
+			apskatitPasutijumu();
 			break;
 		case "3":
 			//skatitRekinu();
 			break;
 		case "x":
-			JOptionPane.showMessageDialog(null, "Pasutijums atcelts", null, JOptionPane.WARNING_MESSAGE);
+			apturet();
 			break;
 		default:
-			JOptionPane.showMessageDialog(null, "Darbiba nepastav");
+			kluda();
 		}
 		}while(!izvele.equals("x"));
 		}catch(Exception e) {
