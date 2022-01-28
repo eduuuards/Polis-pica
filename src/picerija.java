@@ -144,8 +144,21 @@ public class picerija {
 		return rekins;
 	}
 	
+	public static void skatitRekinu() {
+		
+		JOptionPane.showMessageDialog(null, "==-=-=-=-=-=-=-=-=-=-=-=-=-=-== \n=-=        Eduarda Picçrija        =-=\n"
+				+ "=-= Pica:      "+picasNos2+" "+picasIzm+"cm       =-=\n"
+				+ "=-= Dzeriens:    "+dzeriens2+" "+dzerienaIzm+"     =-=\n"
+				+ "=-= Piegade:    "+piegade2+"                    =-=\n"
+				+ "=-= Adrese:     "+adrese+"           =-=\n"
+				+ "=-= Summa:      "+rekins+"                 =-=\n"
+				+ "=-=PALDIES PAR SÛTIJUMU=-=\n"
+				+ "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+	}
+	
+	
 	public static void apskatitPasutijumu() {
-		JOptionPane.showMessageDialog(null, "-=- JÛSU PASÛTIJUMS -=- \nPica: "+picasNos2+" "+picasIzm+" cm \nDzeriens: "+dzeriens2+" "+dzerienaIzm+"\nAdrese :"+adrese+" \nSumma: "+rekins);
+		JOptionPane.showMessageDialog(null, "-=- JÛSU PASÛTIJUMS -=- \nPica: "+picasNos2+" "+picasIzm+" cm \nDzeriens: "+dzeriens2+" "+dzerienaIzm+"\nPiegade: "+piegade2+"\nAdrese: "+adrese+" \nSumma: "+rekins);
 	}
 	
 	public static void main(String[] args) {
@@ -164,7 +177,7 @@ public class picerija {
 			apskatitPasutijumu();
 			break;
 		case "3":
-			//skatitRekinu();
+			skatitRekinu();
 			break;
 		case "x":
 			apturet();
