@@ -13,6 +13,9 @@ public class picerija {
 	static String dzeriens;
 	static String dzeriens2;
 	static String dzerienaIzm;
+	static String piegade;
+	static String piegade2;
+	static String adrese;
 	
 	public static void apturet() {
 		JOptionPane.showMessageDialog(null, "Pasutijums atcelts", null, JOptionPane.WARNING_MESSAGE);
@@ -120,13 +123,29 @@ public class picerija {
 			default:
 				kluda();
 			}
+			
+			piegade = JOptionPane.showInputDialog(null, "-=- PASÛTIJUMA VEIKÐANA -=- \nVai ir nepieciesama piegâde? \n[1]Ja ($2,99) \n[2]Ne");
+			
+			switch(piegade) {
+			case "1":
+				piegade2 = "Jâ";
+				rekins += 2.99;
+				break;
+			case "2":
+				piegade2 = "Ne";
+				break;
 			}
+			if(piegade2.equals("Jâ"));
+			adrese = JOptionPane.showInputDialog(null, "-=- PASÛTIJUMA VEIKÐANA -=- \nIevadiet savu adresi:");
+			}
+			
+			
 			
 		return rekins;
 	}
 	
 	public static void apskatitPasutijumu() {
-		JOptionPane.showMessageDialog(null, "-=- JÛSU PASÛTIJUMS -=- \nPica: "+picasNos2+" "+picasIzm+" cm \nDzeriens: "+dzeriens2+" "+dzerienaIzm+" \nSumma: "+rekins);
+		JOptionPane.showMessageDialog(null, "-=- JÛSU PASÛTIJUMS -=- \nPica: "+picasNos2+" "+picasIzm+" cm \nDzeriens: "+dzeriens2+" "+dzerienaIzm+"\nAdrese :"+adrese+" \nSumma: "+rekins);
 	}
 	
 	public static void main(String[] args) {
